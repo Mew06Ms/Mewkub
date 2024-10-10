@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* สไตล์สำหรับป๊อปอัพ */
+        .popup {
+            display: none; /* ซ่อนป๊อปอัพเริ่มต้น */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .overlay {
+            display: none; /* ซ่อน overlay เริ่มต้น */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="/login" method="POST" onsubmit="return validateForm()">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        
+        <button type="submit">ล็อคอิน</button>
+    </form>
+
+    <% if (error) { %>
+        <div style="color: red;"><%= error %></div> <!-- แสดงข้อความผิดพลาดจากเซิร์ฟเวอร์ -->
+    <% } %>
+
+    <% if (success) { %>
+        <div class="overlay" style="display: block;"></div>
+        <div class="popup" style="display: block;">
+            <h3><%= success %></h3>
+            <button onclick="goHome()">ตกลง</button>
+        </div>
+    <% } %>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // ตรวจสอบว่าอีเมลมีเครื่องหมาย @
+            if (email.indexOf('@') === -1) {
+                alert('Email must contain @');
+                return false;
+            }
+
+            // ตรวจสอบความยาวของรหัสผ่าน
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long');
+                return false;
+            }
+            
+            return true;
+        }
+
+        // ฟังก์ชันสำหรับนำผู้ใช้ไปยังหน้า Home
+        function goHome() {
+            window.location.href = '/'; // นำผู้ใช้ไปยังหน้า Home
+        }
+    </script>
+</body>
+</html>

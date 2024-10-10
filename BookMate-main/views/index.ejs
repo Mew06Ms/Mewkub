@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>BookMate</title>
+  </head>
+  <body>
+   <header class="header">
+      <%- include('navbar') %>
+  </header>
+  <!-- Banner Slider Section -->
+  <section class="banner-slider">
+    <div class="slider-container">
+        <div class="slide fade">
+            <img src="/img/PM1.png" alt="Banner 1">
+            <div class="text-overlay">Exclusive Members 55% OFF</div>
+        </div>
+        <div class="slide fade">
+            <img src="/img/PM2.png" alt="Banner 2">
+            <div class="text-overlay">รักอาจารย์สินนะค้าบบบ
+          
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots for each slide -->
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+    </div>
+  </section>
+  
+  <!-- Best Sellers Section -->
+  <section class="books-section">
+    <h2>Best Sellers</h2>
+    <div class="books-grid">
+        <!-- Book 1 -->
+        <div class="book-item">
+          <a href="#">
+            <img src="/img/NB1.png" alt="Book 1">
+            <h3>ปณิธานสะท้านภพสยบมาร(เล่มที่:2)</h3>
+            <p>฿300.75</p> </a>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Book 2 -->
+        <div class="book-item">
+          <a href="#">
+            <img src="/img/NB5.png" alt="Book 2">
+            <h3>หนึ่งความคิดนิจนิรันดร์ (เล่มที่:13)</h3>
+            <p>฿250.00</p> </a>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Book 3 -->
+        <div class="book-item">
+          <a href="#">
+            <img src="/img/NB2.png" alt="Book 3">
+            <h3>นาโนมาชิน</h3>
+            <p>฿400.50</p> </a>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<!-- New Releases Section -->
+<section class="books-section">
+    <h2>New Releases</h2>
+    <div class="books-grid">
+        <!-- Book 1 -->
+        <div class="book-item">
+          <a href="#">
+            <img src="/img/CB1.png" alt="Book 4">
+            <h3>เดซาโตะ (บ.แสงแดด)</h3>
+            <p>฿350.00</p> </a>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Book 2 -->
+        <div class="book-item">
+          <a href="#">
+            <img src="/img/CB2.png" alt="Book 5">
+            <h3>ก๋วยเตี๋ยวไทย (บ.แสงแดด)</h3>
+            <p>฿275.25</p> </a>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="book-item">
+          <a href="#">
+            <img src="/img/NB6.png" alt="Book 6">
+            <h3>ค่ำคืนสารภาพในคืนฆาตกรรม</h3>
+            <p>฿275.25</p> </a>
+            <button class="add-to-cart">Add to Cart</button>
+    </div>
+</section>
+
+<!-- Coming Soon Section -->
+<section class="books-section">
+    <h2>Coming Soon</h2>
+    <div class="books-grid">
+        <!-- Book 1 -->
+        <div class="book-item">
+            <a href="#">
+            <img src="/img/NB4.png" alt="Book 6">
+            <h3>คดีฆาตกรรมในคฤหาสน์หุ่น</h3>
+            <p>฿380.00</p> </a>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <!-- Book 2 -->
+        <div class="book-item">
+            <a href="#">
+            <img src="/img/NB7.png" alt="Book 7">
+            <h3>บันทึกแปดวาทยะ</h3>
+            <p>฿450.75</p> </a> 
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    
+</section>
+
+   <footer class="footer">
+    <%- include('footer') %>
+</footer>
+<script type="text/javascript" src="/js/script.js"></script>
+ </body>
+</html>
